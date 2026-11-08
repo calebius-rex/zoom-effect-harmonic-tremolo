@@ -13,10 +13,11 @@ ROOT = HERE.parent.parent.parent
 
 sys.path.insert(0, str(ROOT / "build"))
 sys.path.insert(0, str(ROOT / "src" / "airwindows" / "common"))
+sys.path.insert(0, str(HERE))
 
 from linker import LinkerConfig, link, params_from_manifest  # noqa: E402
 from manifest_params import write_param_header  # noqa: E402
-from custom_covers import make_cover  # noqa: E402
+from cover import make_harmonic_cover  # noqa: E402
 
 TI_ROOT = Path("/Applications/ti/ti-cgt-c6000_8.5.0.LTS")
 CL6X = TI_ROOT / "bin" / "cl6x"
@@ -29,6 +30,7 @@ CFLAGS = [
     "--mem_model:data=far",
     f"--include_path={TI_ROOT}/include",
 ]
+
 
 def main() -> None:
     manifest = json.loads((HERE / "manifest_pedal.json").read_text())
@@ -45,21 +47,22 @@ def main() -> None:
 
     print(f"[harmonic] compiling {src_c.name} -> {obj.name}")
     subprocess.run(
-        [str(CL6X), *CFLAGS, f"--define=HARMONIC_AUDIO_FUNC={audio_func}",
+        [str(CL6X), *CFLAGS,
+         f"--define=HARMONIC_AUDIO_FUNC={audio_func}",
          "-c", str(src_c), f"--output_file={obj}"],
         check=True,
         cwd=HERE,
     )
 
     for junk in ("compiler.opt", "linker.cmd"):
-        p = HERE / junk
-        if p.exists():
-            p.unlink()
+        path = HERE / junk
+        if path.exists():
+            path.unlink()
 
     cfg = LinkerConfig(
         materialize_init=True,
         effect_name=effect_name,
-        screen_image=make_cover(effect_name, [p["name"] for p in manifest["params"]]),
+        screen_image=make_harmonic_cover(),
         audio_func_name=audio_func,
         gid=manifest["gid"],
         fxid=manifest["fxid"],
@@ -77,6 +80,7 @@ def main() -> None:
     )
     link(cfg)
     print(f"\n[harmonic] done -> {out_zdl}")
+
 
 if __name__ == "__main__":
     main()

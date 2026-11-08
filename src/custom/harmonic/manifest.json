@@ -1,0 +1,38 @@
+{
+  "effect_name": "Harmonic",
+  "comment": "Harmonic tremolo scaffold: low/high bands are modulated in opposite phase for a classic pulsing, harmonic guitar tremolo.",
+  "audio_func_name": "Fx_DLY_Harmonic",
+  "gid": 8,
+  "gid_comment": "0x08 = Delay category -> ZDL_DLY_ group.",
+  "fxid": 947,
+  "fxid_comment": "Free in the custom Delay range at the time of scaffold creation; verify uniqueness before flashing to hardware.",
+  "fxid_version": "1.00",
+  "flags_byte": 1,
+  "params": [
+    {
+      "name": "Rate",
+      "max": 100,
+      "default": 50,
+      "comment": "LFO rate, roughly 0.2Hz to 8Hz."
+    },
+    {
+      "name": "Depth",
+      "max": 100,
+      "default": 60,
+      "comment": "Tremolo depth, from subtle shimmer to deep chopping."
+    },
+    {
+      "name": "Tone",
+      "max": 100,
+      "default": 50,
+      "comment": "Crossover emphasis between low and high bands."
+    },
+    {
+      "name": "Mix",
+      "max": 100,
+      "default": 50,
+      "comment": "Dry/wet blend."
+    }
+  ],
+  "audio_nop": true
+}

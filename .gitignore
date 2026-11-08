@@ -1,0 +1,15 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Build outputs
+dist/
+*.obj
+*.o
+*.out
+compiler.opt
+linker.cmd
+
+# OS files
+.DS_Store
+Thumbs.db

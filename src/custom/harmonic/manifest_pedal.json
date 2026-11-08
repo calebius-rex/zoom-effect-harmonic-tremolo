@@ -20,6 +20,12 @@
       "comment": "params[6]. Depth of the tremolo pulse."
     },
     {
+  "name": "Tone",
+  "max": 100,
+  "default": 50,
+  "comment": "params[7]. Harmonic band crossover/tone control."
+},
+    {
       "name": "Mix",
       "max": 100,
       "default": 50,

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="64" viewBox="0 0 128 64" role="img" aria-label="Harmonic Tremolo effect cover art">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#02070d"/>
+      <stop offset="0.6" stop-color="#0b1521"/>
+      <stop offset="1" stop-color="#040b11"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" x2="1">
+      <stop offset="0" stop-color="#67f2ff"/>
+      <stop offset="1" stop-color="#d7fff7"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" x2="1">
+      <stop offset="0" stop-color="#8cffb1"/>
+      <stop offset="1" stop-color="#5af0e7"/>
+    </linearGradient>
+    <pattern id="grid" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M 8 0 L 0 0 0 8" fill="none" stroke="#a8dfe8" stroke-opacity="0.15" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="128" height="64" fill="url(#bg)"/>
+  <rect width="128" height="64" fill="url(#grid)"/>
+
+  <g opacity="0.30">
+    <path d="M 0 52 L 128 52" stroke="#84d9d8" stroke-width="0.7"/>
+    <path d="M 0 38 L 128 38" stroke="#84d9d8" stroke-width="0.5"/>
+    <path d="M 0 24 L 128 24" stroke="#84d9d8" stroke-width="0.5"/>
+    <path d="M 0 10 L 128 10" stroke="#84d9d8" stroke-width="0.5"/>
+  </g>
+
+  <g transform="translate(0,2)">
+    <path d="M 10 24 L 18 24 L 24 17 L 29 29 L 35 18 L 44 32 L 49 20 L 56 28 L 62 17 L 70 31 L 76 21 L 80 24 L 86 24 L 92 18 L 98 28 L 104 22 L 109 30 L 119 18" fill="none" stroke="url(#green)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 10 42 L 18 42 L 24 35 L 29 46 L 35 36 L 44 50 L 49 38 L 56 46 L 62 35 L 70 49 L 76 39 L 80 42 L 86 42 L 92 36 L 98 46 L 104 40 L 109 48 L 119 36" fill="none" stroke="url(#cyan)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+  </g>
+
+  <g opacity="0.75" stroke-linecap="round">
+    <path d="M 16 18 L 16 46" stroke="#7ed9f3" stroke-width="0.9"/>
+    <path d="M 30 15 L 30 51" stroke="#7ed9f3" stroke-width="0.8"/>
+    <path d="M 46 12 L 46 54" stroke="#7ed9f3" stroke-width="0.8"/>
+    <path d="M 62 10 L 62 56" stroke="#7ed9f3" stroke-width="0.8"/>
+    <path d="M 78 12 L 78 54" stroke="#7ed9f3" stroke-width="0.8"/>
+    <path d="M 94 15 L 94 51" stroke="#7ed9f3" stroke-width="0.8"/>
+    <path d="M 110 18 L 110 46" stroke="#7ed9f3" stroke-width="0.9"/>
+  </g>
+
+  <g>
+    <text x="64" y="13" font-size="8" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-style="normal" text-anchor="middle" fill="#d7fef9" letter-spacing="1.1">HARMONIC</text>
+    <text x="64" y="57" font-size="6" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#b9eaf4" letter-spacing="1.4">RATE  DEPTH  MIX</text>
+  </g>
+
+  <g opacity="0.9">
+    <circle cx="20" cy="17" r="2.2" fill="#b7f9ff"/>
+    <circle cx="106" cy="18" r="2.2" fill="#b7f9ff"/>
+  </g>
+</svg>
